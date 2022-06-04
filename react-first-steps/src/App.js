@@ -7,13 +7,13 @@ function App() {
       id: "e1",
       title: "Car Insurance",
       amount: 294.67,
-      date: new Date(2021, 2, 28),
+      date: new Date(2019, 2, 28),
     },
     {
       id: "e2",
       title: "Boat Insurance",
       amount: 342.88,
-      date: new Date(2021, 1, 19),
+      date: new Date(2020, 1, 19),
     },
     {
       id: "e3",
@@ -25,14 +25,19 @@ function App() {
       id: "e4",
       title: "Motorcycle Insurance",
       amount: 98.22,
-      date: new Date(2021, 3, 10),
+      date: new Date(2022, 3, 10),
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  };
+
   return (
     <div>
-      <NewExpense />
-      <Expenses expenses={expenses}/>
+      <NewExpense onSaveExpense={addExpenseHandler} />
+      <Expenses expenses={expenses} />
     </div>
   );
 }
